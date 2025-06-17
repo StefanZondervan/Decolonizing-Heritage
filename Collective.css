@@ -1,0 +1,485 @@
+/* Base body and font */
+body {
+  font-family: 'Ancizar Serif', serif;
+  background: rgb(255, 245, 233);
+  color: #398273;
+  margin: 0;
+  padding: 30px 20px;
+  line-height: 1.6;
+}
+
+/* Header styling */
+.header {
+  max-width: 1400px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1 {
+  flex-grow: 1;
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin: 0;
+  letter-spacing: 1px;
+  color: #398273;
+}
+
+.header-explanation {
+  flex-basis: 100%;
+  font-style: italic;
+  font-size: 0.8rem; /* Changed to 0.8rem */
+  color: #398273;
+  margin: 0px 0 0 0;
+  line-height: 1.4;
+  user-select: none;
+  padding-bottom: 10px;
+}
+
+.back-button {
+  flex-shrink: 0;
+  font-family: 'Ancizar Serif', serif;
+  background-color: #dcdcdc;
+  color: #398273;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #b4b4b4;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Main content container */
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* QR Section */
+.qr-section {
+  text-align: center;
+}
+
+/* QR container with subtle shadow and smooth hover */
+.qr-container {
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  user-select: none;
+}
+
+.qr-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.qr-icon-wrapper:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+}
+
+.qr-code {
+  width: 150px;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+.qr-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.25);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.qr-icon-wrapper:hover .qr-overlay {
+  opacity: 1;
+}
+
+.plus-icon {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  user-select: none;
+}
+
+.qr-section p {
+  margin-top: 10px;
+  color: #398273;
+  font-style: italic;
+  font-size: 0.8rem; /* Changed to 0.8rem */
+}
+
+/* Filter Section */
+.filter-section {
+  text-align: center;
+}
+
+/* Filter bar styling */
+.filter-bar {
+  display: inline-block;
+}
+
+.filter-bar button {
+  font-family: 'Ancizar Serif', serif;
+  background-color: #e8e6e0;
+  color: #398273;
+  border: none;
+  padding: 12px 28px;
+  margin: 0 10px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.filter-bar button:hover {
+  background-color: #cfcac1;
+  transform: scale(1.05);
+}
+
+/* Active state for filter buttons (add this to your CSS) */
+.filter-bar button.active {
+  background-color: #398273; /* A contrasting color */
+  color: #fff; /* White text for contrast */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12); /* Slightly stronger shadow */
+  transform: scale(1.02); /* Maintain a subtle scale */
+}
+
+
+/* Tag explanation styling */
+.tag-explanation {
+  margin-top: 15px;
+  color: #398273;
+  font-style: italic;
+  font-size: 0.8rem; /* Changed to 0.8rem */
+}
+
+/* Heritage grid with consistent spacing and max width */
+.heritage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Card style with subtle shadow and smooth scale on hover */
+.heritage-card {
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+  overflow: hidden;
+  opacity: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.heritage-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* Card image container to keep aspect ratio */
+.card-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #398273;
+}
+
+.card-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card content spacing and font styling */
+.card-content {
+  padding: 20px 25px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #398273;
+}
+
+.card-description {
+  font-size: 0.8rem; /* Changed to 0.8rem */
+  color: #398273;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.card-meta {
+  font-size: 0.8rem; /* Changed to 0.8rem */
+  color: #398273;
+  border-top: 1px solid #398273;
+  padding-top: 12px;
+  margin-top: 12px;
+  font-style: italic;
+}
+
+/* Audio and text card styling consistent padding */
+.card-audio {
+  background-color: #398273;
+  padding: 22px 25px;
+  border-bottom: 1px solid #398273;
+  font-family: 'Ancizar Serif', serif;
+  color: #fff;
+}
+
+.card-text {
+  padding: 22px 25px;
+  white-space: pre-line;
+  font-size: 0.8rem; /* Changed to 0.8rem */
+  color: #398273;
+  line-height: 1.5;
+  font-family: 'Ancizar Serif', serif;
+}
+
+/* Audio player full width */
+audio {
+  width: 100%;
+  margin-top: 14px;
+  outline: none;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Modal Content Box */
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: #555;
+}
+
+/* --- Responsive adjustments for smaller screens --- */
+@media (max-width: 768px) {
+  body {
+      padding: 20px 15px; /* Slightly less padding on smaller screens */
+  }
+
+  .header {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px; /* Reduce gap slightly */
+      padding: 0 15px;
+  }
+
+  .header h1 {
+      font-size: 2.2rem; /* Make header title slightly smaller */
+      text-align: center;
+  }
+
+  .header-explanation {
+      font-size: 0.8rem; /* Changed to 0.8rem */
+      text-align: center;
+      padding-bottom: 5px; /* Reduce bottom padding */
+  }
+
+  .back-button {
+      padding: 10px 20px; /* Slightly smaller button */
+      font-size: 14px;
+      margin-top: 10px; /* Add some space above button if needed */
+  }
+
+  .main-content {
+      padding: 0 15px;
+      gap: 25px; /* Adjust main content gap */
+  }
+
+  .qr-code {
+      width: 120px; /* Smaller QR code */
+  }
+
+  .plus-icon {
+      font-size: 2.5rem; /* Smaller plus icon */
+  }
+
+  .qr-section p {
+      font-size: 0.8rem; /* Changed to 0.8rem */
+  }
+
+  .filter-bar {
+      display: flex; /* Use flexbox for filter buttons */
+      flex-wrap: wrap; /* Allow buttons to wrap */
+      justify-content: center;
+      gap: 10px; /* Gap between buttons */
+  }
+
+  .filter-bar button {
+      padding: 10px 20px; /* Smaller filter buttons */
+      margin: 0; /* Remove individual margins, use gap */
+      font-size: 14px;
+  }
+
+  .tag-explanation {
+      margin-top: 10px; /* Reduce margin */
+      font-size: 0.8rem; /* Changed to 0.8rem */
+  }
+
+  .heritage-grid {
+      grid-template-columns: 1fr; /* One column for cards */
+      gap: 20px; /* Slightly less gap between cards */
+      padding: 0 10px; /* Add some horizontal padding to the grid itself */
+  }
+
+  .heritage-card {
+      border-radius: 12px; /* Slightly smaller border-radius */
+  }
+
+  .card-content {
+      padding: 15px 20px; /* Reduced padding inside cards */
+  }
+
+  .card-title {
+      font-size: 18px; /* Smaller card title */
+  }
+
+  .card-description {
+      font-size: 0.8rem; /* Changed to 0.8rem */
+  }
+
+  .card-meta {
+      font-size: 0.8rem; /* Changed to 0.8rem */
+      padding-top: 10px;
+      margin-top: 10px;
+  }
+
+  .card-audio, .card-text {
+      padding: 18px 20px; /* Reduced padding for audio/text cards */
+  }
+
+  /* Modal adjustments for smaller screens */
+  .modal-content {
+      max-width: 95%; /* Wider modal on smaller screens */
+      max-height: 90%; /* Taller modal on smaller screens */
+      padding: 20px;
+      border-radius: 10px;
+  }
+
+  .modal-close {
+      font-size: 24px;
+      top: 10px;
+      right: 15px;
+  }
+}
+
+/* Even smaller screens (e.g., very narrow phones, less common but good to consider) */
+@media (max-width: 480px) {
+  .header h1 {
+      font-size: 1.8rem; /* Even smaller header title */
+  }
+
+  .header-explanation {
+      font-size: 0.8rem; /* Changed to 0.8rem */
+  }
+
+  .qr-code {
+      width: 100px; /* Even smaller QR code */
+  }
+
+  .plus-icon {
+      font-size: 2rem;
+  }
+
+  .filter-bar button {
+      font-size: 13px;
+      padding: 8px 15px;
+  }
+}
+
+/* Specific adjustment for a 400px width */
+@media (max-width: 400px) {
+  .heritage-grid {
+      gap: 15px; /* Slightly less gap for very narrow screens */
+      padding: 0 5px; /* Slightly more padding reduction */
+  }
+  .filter-bar {
+      /* Ensure buttons wrap well if they can't fit on one line */
+      gap: 8px;
+  }
+  .card-content {
+      padding: 12px 15px; /* Further reduce card content padding */
+  }
+  .card-title {
+      font-size: 17px;
+  }
+  .card-description {
+      font-size: 0.8rem; /* Changed to 0.8rem */
+  }
+  .card-meta {
+      font-size: 0.8rem; /* Changed to 0.8rem */
+  }
+}
