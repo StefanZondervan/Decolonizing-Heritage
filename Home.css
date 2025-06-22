@@ -1,0 +1,341 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body, html {
+  height: 100%;
+  font-family: 'Ancizar Serif', serif;
+  background-color: rgb(255, 245, 233);
+  color: #398273;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+/* Grid Background Style */
+#grid-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  opacity: 0.3;
+  background-image:
+    linear-gradient(45deg, #398273 1px, transparent 1px),
+    linear-gradient(-45deg, #398273 1px, transparent 1px),
+    linear-gradient(to right, #398273 1px, transparent 1px),
+    linear-gradient(to bottom, #398273 1px, transparent 1px);
+  background-size: 90px 88.8px;
+}
+
+/* Header */
+header {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  color: #398273;
+  line-height: 1.6;
+  font-style: italic;
+  user-select: text;
+  z-index: 2;
+  left: 50%;
+transform: translateX(-50%);
+width: 90%; /* This is important for small screens */
+max-width: 600px;
+text-align: center;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Main title */
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #398273;
+  letter-spacing: 1.2px;
+}
+
+/* Intro paragraph */
+.hero p.intro {
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin-bottom: 4rem;
+  color: #398273;
+  line-height: 1.6;
+  font-style: italic;
+  user-select: text;
+}
+
+/* Call to action button */
+.cta-button {
+  background-color: #398273;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 14px 36px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 5px 12px rgba(99, 169, 160, 0.5);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  margin-bottom: 40px;
+}
+
+.cta-button:hover {
+  background-color: #398273;
+  color: #e2eae8;
+}
+
+/* Heritage Steps Section */
+.heritage-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.step-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 110px;
+  flex-shrink: 0;
+  cursor: default;
+  position: relative;
+}
+
+.step-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.step-icon p {
+  font-size: 1rem;
+  color: #398273;
+  line-height: 1.3;
+  font-weight: 400;
+  user-select: none;
+  text-align: center;
+}
+
+/* Arrow Styles */
+.step-icon:not(:last-child)::after {
+  content: '→';
+  font-size: 1.8rem;
+  color: #398273;
+  font-weight: bold;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: block;
+  z-index: 10;
+}
+
+.step-arrow {
+    display: none;
+}
+
+/* Responsive Styles (Media Queries) */
+
+/* Mobile-Specific Styles (e.g., for screens smaller than 768px) */
+@media (max-width: 768px) {
+  header {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .hero {
+    min-height: 600px;
+    padding: 0 20px 30px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .hero p.intro {
+    font-size: 0.9rem;
+    max-width: 90%;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 12px 30px;
+    margin-bottom: 30px;
+  }
+
+  .heritage-steps {
+    gap: 10px;
+    padding: 0 15px;
+    flex-wrap: nowrap;
+  }
+  .step-icon {
+    width: 80px;
+  }
+  .step-icon img {
+    width: 45px;
+    height: 45px;
+  }
+  .step-icon p {
+    font-size: 0.75rem;
+  }
+
+  .step-icon:not(:last-child)::after {
+    font-size: 1.3rem;
+    right: -8px;
+  }
+}
+
+/* Specific adjustments for 480px width phone (and smaller) */
+@media (max-width: 480px) {
+  body {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  header {
+    font-size: 0.6rem;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 5px;
+    width: auto;
+    white-space: nowrap;
+  }
+
+  .hero {
+    padding: 0 10px;
+    min-height: 100vh;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding-top: calc(45px + 10px);
+    padding-bottom: 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.4rem;
+    line-height: 1.1;
+  }
+
+  .hero p.intro {
+    font-size: 0.65rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+  }
+
+  .cta-button {
+    font-size: 0.7rem;
+    padding: 5px 15px;
+    margin-bottom: 8px;
+  }
+
+  .heritage-steps {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 2px;
+    padding: 0 5px;
+    margin-top: 5px;
+    width: auto;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .step-icon {
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
+    margin-bottom: 0;
+    padding-right: 0;
+  }
+
+  .step-icon img {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 1px;
+  }
+
+  .step-icon p {
+    font-size: 0.45rem;
+    line-height: 1;
+    word-break: break-all;
+    white-space: normal;
+  }
+
+  .step-icon:not(:last-child)::after {
+    font-size: 0.7rem;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+  }
+
+  .step-icon:nth-child(4)::after {
+      bottom: auto;
+      left: auto;
+  }
+
+  .step-icon:nth-child(5) {
+    flex-basis: auto;
+    margin-top: 0;
+    order: 0;
+    width: 60px;
+    max-width: 60px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .step-icon:nth-child(5)::before {
+    content: none;
+  }
+}
